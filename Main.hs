@@ -19,6 +19,7 @@ app = scottyApp $
   get "/" $ do
     (url, filePath) <- liftIO randomFile
     setHeader "X-Url" url
+    setHeader "Content-Type" "image/png"
     file filePath
 
 type Ad = (Text, FilePath)
